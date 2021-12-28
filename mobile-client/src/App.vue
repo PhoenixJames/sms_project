@@ -1,19 +1,16 @@
 <template>
   <v-app id="app">
     <v-row>
-      <v-col cols="2"><SideBar /></v-col>
       <v-col class="pt-5"><router-view/></v-col>
     </v-row>
   </v-app>
 </template>
 <script>
 // @ is an alias to /src
-import SideBar from '@/components/common/SideBar.vue';
 
 export default {
   name: 'Home',
   components: {
-    SideBar,
   },
 };
 </script>

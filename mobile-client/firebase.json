@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "sms-app-desktop",
+    "site": "sms-app-mobile",
     "public": "dist",
     "ignore": [
       "firebase.json",

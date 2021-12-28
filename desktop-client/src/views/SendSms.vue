@@ -23,7 +23,7 @@
       <v-btn
         color="blue-grey"
         class="ma-2 white--text"
-        @click="qrDialog = true"
+        @click="sendQrCode"
       >
         <v-icon
           right
@@ -37,11 +37,11 @@
     <v-dialog width="400" v-model="qrDialog">
       <v-card width="400">
         <v-card-subtitle>
-          Please scan this qrcode in android web.
+          Please scan this qrcode in mobile web.
         </v-card-subtitle>
         <v-card-text>
           <v-row justify="center">
-            <qrcode-vue v-if="message.length > 0" :value="message" size="300" level="L" />
+            <qrcode-vue :value="qrValue" size="300" level="L" />
           </v-row>
         </v-card-text>
       </v-card>
@@ -58,12 +58,19 @@ export default {
     return {
       toPhone: '',
       message: '',
+      qrValue: '',
       qrDialog: false,
     };
   },
   components: {
     // SideBar,
     QrcodeVue,
+  },
+  methods: {
+    sendQrCode() {
+      this.qrValue = `SMSTO:${this.toPhone}:${this.message}`;
+      this.qrDialog = true;
+    },
   },
 };
 </script>

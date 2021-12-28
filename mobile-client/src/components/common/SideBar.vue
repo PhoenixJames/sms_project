@@ -46,8 +46,6 @@ export default {
   data() {
     return {
       items: [
-        { title: 'Home', icon: 'mdi-home', route: 'Home' },
-        { title: 'About', icon: 'mdi-help-box', route: 'About' },
         { title: 'Compose', icon: 'mdi-send', route: 'SendSms' },
       ],
       right: null,
